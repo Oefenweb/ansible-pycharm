@@ -1,0 +1,3 @@
+# vars file for pycharm
+---
+pycharm_downloads_path: /var/lib/ansible/pycharm/downloads

@@ -1,0 +1,27 @@
+# tasks file for pycharm
+---
+- name: create (download) directory
+  file:
+    path: "{{ pycharm_downloads_path }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  tags: [configuration, pycharm, pycharm-download]
+
+- name: download
+  get_url:
+    url: "https://download.jetbrains.com/python/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
+    dest: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
+    owner: root
+    group: root
+    mode: 0644
+  tags: [configuration, pycharm, pycharm-download]
+
+- name: install
+  unarchive:
+    src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
+    dest: "{{ pycharm_install_prefix }}"
+    creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_version }}"
+    copy: false
+  tags: [configuration, pycharm, pycharm-install]

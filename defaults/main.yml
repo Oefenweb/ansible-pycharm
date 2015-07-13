@@ -1,0 +1,5 @@
+# defaults file for pycharm
+---
+pycharm_version: 4.5.3
+pycharm_edition: professional
+pycharm_install_prefix: /opt
