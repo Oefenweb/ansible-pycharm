@@ -1,6 +1,6 @@
 ## pycharm
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-pycharm.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-pycharm) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-pycharm-blue.svg)](https://galaxy.ansible.com/list#/roles/4372)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-pycharm.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-pycharm) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-pycharm-blue.svg)](https://galaxy.ansible.com/tersmitten/pycharm)
 
 Set up [PyCharm](https://www.jetbrains.com/pycharm/).
 
@@ -10,7 +10,7 @@ None
 
 #### Variables
 
-* `pycharm_version` [default: `4.5.4`]: Version to install
+* `pycharm_version` [default: `4.5.5`]: Version to install
 * `pycharm_edition` [default: `professional`]: Edition to install (e.g. `community`)
 * `pycharm_install_prefix` [default: `/opt`]: Install prefix
 
