@@ -12,6 +12,22 @@
     - pycharm
     - pycharm-download
 
+- name: Find latest version
+  uri:
+    url: "https://data.services.jetbrains.com/products/releases?code=PCP%2CPCC&latest=true&type=release"
+    return_content: yes
+    body_format: json
+  register: releases_response
+  when: pycharm_version == 'latest'
+
+- set_fact:
+    pycharm_version: "{{ releases_response.json.PCC.0.version }}"
+  when: pycharm_version == 'latest' and pycharm_edition == 'community'
+
+- set_fact:
+    pycharm_version: "{{ releases_response.json.PCP.0.version }}"
+  when: pycharm_version == 'latest' and pycharm_edition == 'professional'
+
 - name: download
   get_url:
     url: "http://download.jetbrains.com/python/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
