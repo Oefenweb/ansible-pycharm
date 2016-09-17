@@ -14,7 +14,7 @@
 
 - name: Find latest version
   uri:
-    url: "https://data.services.jetbrains.com/products/releases?code=PCP%2CPCC&latest=true&type=release"
+    url: "http://data.services.jetbrains.com/products/releases?code=PCP%2CPCC&latest=true&type=release"
     return_content: yes
     body_format: json
   register: releases_response
