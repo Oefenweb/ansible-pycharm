@@ -10,7 +10,7 @@ None
 
 #### Variables
 
-* `pycharm_version` [default: `4.5.5`]: Version to install
+* `pycharm_version` [default: `latest`]: Version to install (e.g. `4.5.5` or `latest`)
 * `pycharm_edition` [default: `professional`]: Edition to install (e.g. `community`)
 * `pycharm_install_prefix` [default: `/opt`]: Install prefix
 
