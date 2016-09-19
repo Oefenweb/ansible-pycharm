@@ -20,11 +20,13 @@
   register: releases_response
   when: pycharm_version == 'latest'
 
-- set_fact:
+- name: "Set pycharm_version to latest community version (if edition==community)"
+  set_fact:
     pycharm_version: "{{ releases_response.json.PCC.0.version }}"
   when: pycharm_version == 'latest' and pycharm_edition == 'community'
 
-- set_fact:
+- name: "Set pycharm_version to latest professional version (if edition==professional)"
+  set_fact:
     pycharm_version: "{{ releases_response.json.PCP.0.version }}"
   when: pycharm_version == 'latest' and pycharm_edition == 'professional'
 
