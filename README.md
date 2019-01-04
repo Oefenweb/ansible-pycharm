@@ -10,7 +10,7 @@ None
 
 #### Variables
 
-* `pycharm_version` [default: `2018.3`]: Version to install
+* `pycharm_version` [default: `2018.3.2`]: Version to install
 * `pycharm_edition` [default: `professional`]: Edition to install (e.g. `community`)
 * `pycharm_install_prefix` [default: `/opt`]: Install prefix
 
