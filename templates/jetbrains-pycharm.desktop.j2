@@ -1,0 +1,13 @@
+{{ ansible_managed | comment }}
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=pycharm-{{ pycharm_edition }}
+Icon={{ pycharm_install_prefix}}/{{ pycharm_install_dirname }}/bin/pycharm.png
+Exec="{{ pycharm_install_prefix}}/{{ pycharm_install_dirname }}/bin/pycharm.sh" %f
+Comment=Develop with pleasure!
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=PyCharm
+

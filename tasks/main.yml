@@ -46,6 +46,21 @@
     tags:
       - pycharm-install-new
 
+- name: determine path and name of pycharm installation directory
+  shell: "ls {{ pycharm_install_prefix }} | grep pycharm"
+  register: lscontents
+
+- set_fact: pycharm_install_dirname="{{ lscontents.stdout }}"
+
+- name: install IntelliJ IDEA desktop file
+  become: yes
+  template:
+    src: jetbrains-pycharm.desktop.j2
+    dest: '/usr/share/applications/jetbrains-pycharm-{{ pycharm_edition }}.desktop'
+    owner: root
+    group: root
+    mode: 'u=rw,go=r'
+
   tags:
     - configuration
     - pycharm
