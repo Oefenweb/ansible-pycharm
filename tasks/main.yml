@@ -14,7 +14,7 @@
 
 - name: download
   get_url:
-    url: "http://download.jetbrains.com/python/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
+    url: "{{ pycharm_download_mirror }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
     dest: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
     owner: root
     group: root
