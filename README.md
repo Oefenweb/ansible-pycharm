@@ -13,6 +13,7 @@ None
 * `pycharm_version` [default: `2018.3.5`]: Version to install
 * `pycharm_edition` [default: `professional`]: Edition to install (e.g. `community`)
 * `pycharm_install_prefix` [default: `/opt`]: Install prefix
+* `pycharm_download_mirror` [default: `http://download.jetbrains.com/python`]: Download URL
 
 ## Dependencies
 

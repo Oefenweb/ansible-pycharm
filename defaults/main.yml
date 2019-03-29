@@ -3,3 +3,4 @@
 pycharm_version: 2018.3.5
 pycharm_edition: professional
 pycharm_install_prefix: /opt
+pycharm_download_mirror: 'http://download.jetbrains.com/python'
