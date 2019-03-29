@@ -1,6 +1,7 @@
 ## pycharm
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-pycharm.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-pycharm) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-pycharm-blue.svg)](https://galaxy.ansible.com/Oefenweb/pycharm)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-pycharm.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-pycharm)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-pycharm-blue.svg)](https://galaxy.ansible.com/Oefenweb/pycharm)
 
 Set up [PyCharm](https://www.jetbrains.com/pycharm/).
 
@@ -13,7 +14,7 @@ None
 * `pycharm_version` [default: `2018.3.5`]: Version to install
 * `pycharm_edition` [default: `professional`]: Edition to install (e.g. `community`)
 * `pycharm_install_prefix` [default: `/opt`]: Install prefix
-* `pycharm_download_mirror` [default: `http://download.jetbrains.com/python`]: Download URL
+* `pycharm_download_url` [default: `http://download.jetbrains.com/python`]: Download url
 
 ## Dependencies
 
