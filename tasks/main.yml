@@ -26,25 +26,25 @@
 
 - block:
 
-  - name: install | old
-    unarchive:
-      src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
-      dest: "{{ pycharm_install_prefix }}"
-      creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_version }}"
-      copy: false
-    when: pycharm_version is version('2016.1.0', '<')
-    tags:
-      - pycharm-install-old
+    - name: install | old
+      unarchive:
+        src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
+        dest: "{{ pycharm_install_prefix }}"
+        creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_version }}"
+        copy: false
+      when: pycharm_version is version('2016.1.0', '<')
+      tags:
+        - pycharm-install-old
 
-  - name: install | new
-    unarchive:
-      src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
-      dest: "{{ pycharm_install_prefix }}"
-      creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}"
-      copy: false
-    when: pycharm_version is version('2016.1.0', '>=')
-    tags:
-      - pycharm-install-new
+    - name: install | new
+      unarchive:
+        src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
+        dest: "{{ pycharm_install_prefix }}"
+        creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}"
+        copy: false
+      when: pycharm_version is version('2016.1.0', '>=')
+      tags:
+        - pycharm-install-new
 
   tags:
     - configuration
