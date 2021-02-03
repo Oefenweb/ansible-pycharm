@@ -1,6 +1,6 @@
 # defaults file for pycharm
 ---
-pycharm_version: 2020.2.1
+pycharm_version: 2020.3.3
 pycharm_edition: community
 pycharm_install_prefix: /opt
 pycharm_download_url: 'http://download.jetbrains.com/python'
