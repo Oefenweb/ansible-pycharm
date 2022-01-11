@@ -1,6 +1,6 @@
 # defaults file
 ---
-pycharm_version: 2021.2.3
+pycharm_version: 2021.3.1
 pycharm_edition: community
 pycharm_install_prefix: /opt
 pycharm_download_url: 'http://download.jetbrains.com/python'
