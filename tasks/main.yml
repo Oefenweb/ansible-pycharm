@@ -50,3 +50,14 @@
     - configuration
     - pycharm
     - pycharm-install
+
+- name: Retrieve pycharm dir name
+  command: "ls -t {{ pycharm_install_prefix }}"
+  register: result_pycharm_folder_name
+  changed_when: no
+
+- name: Ensure pycharm bin exist
+  template: src=pycharm.j2 dest=/usr/bin/pycharm mode=755
+
+- name: Ensure pycharm shortcut is present
+  template: src=pycharm.desktop.j2 dest=/usr/share/applications/pycharm.desktop

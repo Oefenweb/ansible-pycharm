@@ -1,3 +1,5 @@
 # vars file
 ---
 pycharm_downloads_path: /var/lib/ansible/pycharm/downloads
+
+pycharm_folder_name: "{{ result_pycharm_folder_name.stdout_lines.0 }}"
