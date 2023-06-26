@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: create (download) directory
-  file:
+  ansible.builtin.file:
     path: "{{ pycharm_downloads_path }}"
     state: directory
     owner: root
@@ -13,7 +13,7 @@
     - pycharm-download
 
 - name: download
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ pycharm_download_url }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
     dest: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
     owner: root
@@ -24,10 +24,14 @@
     - pycharm
     - pycharm-download
 
-- block:
-
+- name: install
+  tags:
+    - configuration
+    - pycharm
+    - pycharm-install
+  block:
     - name: install | old
-      unarchive:
+      ansible.builtin.unarchive:
         src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
         dest: "{{ pycharm_install_prefix }}"
         creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_version }}"
@@ -37,7 +41,7 @@
         - pycharm-install-old
 
     - name: install | new
-      unarchive:
+      ansible.builtin.unarchive:
         src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
         dest: "{{ pycharm_install_prefix }}"
         creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}"
@@ -45,8 +49,3 @@
       when: pycharm_version is version('2016.1.0', '>=')
       tags:
         - pycharm-install-new
-
-  tags:
-    - configuration
-    - pycharm
-    - pycharm-install
