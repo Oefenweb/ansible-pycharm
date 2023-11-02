@@ -26,7 +26,7 @@ None
 ---
 - hosts: all
   roles:
-    - pycharm
+    - oefenweb.pycharm
 ```
 
 #### License
