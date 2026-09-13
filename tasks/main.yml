@@ -14,8 +14,8 @@
 
 - name: download
   ansible.builtin.get_url:
-    url: "{{ pycharm_download_url }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
-    dest: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
+    url: "{{ pycharm_download_url }}/pycharm-{{ pycharm_version }}.tar.gz"
+    dest: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_version }}.tar.gz"
     owner: root
     group: root
     mode: '0644'
@@ -32,20 +32,9 @@
   block:
     - name: install | old
       ansible.builtin.unarchive:
-        src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
+        src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_version }}.tar.gz"
         dest: "{{ pycharm_install_prefix }}"
         creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_version }}"
         copy: false
-      when: pycharm_version is version('2016.1.0', '<')
       tags:
-        - pycharm-install-old
-
-    - name: install | new
-      ansible.builtin.unarchive:
-        src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
-        dest: "{{ pycharm_install_prefix }}"
-        creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}"
-        copy: false
-      when: pycharm_version is version('2016.1.0', '>=')
-      tags:
-        - pycharm-install-new
+        - pycharm-install
