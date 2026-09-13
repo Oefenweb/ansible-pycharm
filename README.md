@@ -11,8 +11,7 @@ None
 
 #### Variables
 
-* `pycharm_version` [default: `2024.3.6`]: Version to install
-* `pycharm_edition` [default: `community`]: Edition to install (e.g. `community`)
+* `pycharm_version` [default: `2026.2.2`]: Version to install
 * `pycharm_install_prefix` [default: `/opt`]: Install prefix
 * `pycharm_download_url` [default: `http://download.jetbrains.com/python`]: Download url
 
